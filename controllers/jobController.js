@@ -16,7 +16,7 @@ export const postJob = catchAsyncError(async (req, res, next) => {
         return next(new ErrorHandler("Job Seeker is not allowed to access these resources", 400));
     }
     const {title, description, catagory, country, city, location, fixedSalary, salaryFrom, salaryTo} = req.body;
-
+    console.log("a1");
     if(!title || !description || !catagory || !country || !city || !location){
         console.log(title + " " + description + " " + catagory + " " + country + " " + city + " " + location);
         return next(new ErrorHandler("Please provide full job details", 400));
